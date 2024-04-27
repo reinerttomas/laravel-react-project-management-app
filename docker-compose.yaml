@@ -15,6 +15,15 @@ services:
     ports:
       - "5432:5432"
 
+  smtp:
+    image: rnwood/smtp4dev:latest
+    restart: unless-stopped
+    networks:
+      - internal
+    ports:
+      - "3300:80"
+      - "2525:25"
+
 networks:
   internal:
 
