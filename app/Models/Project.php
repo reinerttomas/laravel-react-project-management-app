@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use App\Enums\ProjectStatus;
@@ -15,6 +17,9 @@ class Project extends Model
         'status' => ProjectStatus::class,
     ];
 
+    /**
+     * @return HasMany<Task>
+     */
     public function tasks(): HasMany
     {
         return $this->hasMany(Task::class);
